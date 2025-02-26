@@ -15,9 +15,9 @@ Code review bot is to automate code reviews by using OpenAI's language model. It
 ## Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/gflamep/CodeReviewBot.git
+    git clone https://github.com/jeesup0103/CodeReviewBot.git
     cd CodeReviewBot
-    
+
     ```
 
 2. Install the required dependencies:
