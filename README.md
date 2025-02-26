@@ -1,7 +1,7 @@
-# LLM Code Review
+# Code Review Bot
 
 ## Introduction
-LLM Code Review is a Python-based tool designed to automate code reviews by leveraging OpenAI's language model. It fetches code changes from GitHub pull requests on main branch, analyzes the changes using OpenAI's GPT model, and posts feedback directly to the corresponding GitHub pull request.
+Code review bot is to automate code reviews by using OpenAI's language model. It fetches code changes from GitHub pull requests on main branch, analyzes the changes using OpenAI's GPT model, and posts feedback directly to the corresponding GitHub pull request.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,8 +15,8 @@ LLM Code Review is a Python-based tool designed to automate code reviews by leve
 ## Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/gflamep/llm_code_review.git
-    cd llm_code_review
+    git clone https://github.com/gflamep/CodeReviewBot.git
+    cd CodeReviewBot
     
     ```
 
@@ -25,7 +25,7 @@ LLM Code Review is a Python-based tool designed to automate code reviews by leve
     pip install openai requests python-dotenv
     ```
 
-3. Create a `.env` file in the root directory and add your GitHub token and OpenAI API key (not needed when using github actions):
+3. Create a `.env` file in the root directory and add your GitHub token and OpenAI API key
     ```env
     GH_TOKEN=your_github_token
     OPENAI_API_KEY=your_openai_api_key
@@ -100,25 +100,6 @@ Ensure you have the following environment variables set in your .env file:
 
 - GITHUB_TOKEN: Your GitHub personal access token.
 - OPENAI_API_KEY: Your OpenAI API key.
-
-## Documentation
-
-### Functions
-
-#### `get_pr_details(pr_url)`
-Fetches details of a pull request from GitHub.
-
-#### `get_code_changes(base_url, base_sha, head_sha)`
-Retrieves the code differences between the base and head commits of a pull request.
-
-#### `analyze_code_with_chatgpt(code_diff)`
-Analyzes the code differences using OpenAI's GPT model.
-
-#### `post_feedback_to_github(pr_url, feedback)`
-Posts the generated feedback as a comment on the GitHub pull request.
-
-#### `main(pr_url)`
-Main function that orchestrates the fetching of PR details, code analysis, and feedback posting.
 
 ## Examples
 Run the code review on a specific pull request:
