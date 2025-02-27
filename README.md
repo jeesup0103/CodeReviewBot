@@ -25,25 +25,24 @@ Code review bot is to automate code reviews by using OpenAI's language model. It
     pip install openai requests python-dotenv
     ```
 
-3. Create a `.env` file in the root directory and add your GitHub token and OpenAI API key
+3. Make GitHub repository secrets named GH_TOKEN and OPENAI_API_KEY
     ```env
-    GH_TOKEN=your_github_token
     OPENAI_API_KEY=your_openai_api_key
-    ```
-
-4. Make GitHub repository secrets named GH_TOKEN and OPENAI_API_KEY
-    ```env
-    GH_TOKEN=your_github_token
-    OPENAI_API_KEY=your_openai_api_key
-    ```
-
-5.  Move .github file to target repository to run github actions:
-    ```sh
-    mv .github/ ..
+    REP_GH_TOKEN=your_repository_github_token
+    BOT_GH_TOKEN=your_bot_github_token
     ```
 
 ## Usage
-To run the code review manually, execute the following command:
+    
+To run the code review manually, create a `.env` file and add your GitHub token and OpenAI API key.
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+REP_GH_TOKEN=your_repository_github_token
+BOT_GH_TOKEN=your_bot_github_token
+```
+    
+Then execute the following command:
 ```sh
 python review_code.py <pr_url>
 ```
@@ -56,10 +55,6 @@ Example: https://api.github.com/repos/yourusername/yourrepo/pulls/1
 - Automated Code Review: Automatically fetches code changes from a GitHub pull request and generates a review using OpenAI's GPT model.
 - Feedback Posting: Posts the generated feedback as a comment on the GitHub pull request.
 - GitHub Actions Integration: Set up as a GitHub Action to automate the review process on each pull request to the main branch.
-## Dependencies
-- requests
-- openai
-- python-dotenv
 ## Configuration
 ### GitHub Actions Workflow
 The GitHub Actions workflow is defined in .github/workflows/main.yml. This workflow triggers on pull requests to the main branch and runs the code review:
@@ -95,11 +90,6 @@ jobs:
         run: |
           python review_code.py ${{ github.event.pull_request.url }}
 ```
-### Environment Variables
-Ensure you have the following environment variables set in your .env file:
-
-- GITHUB_TOKEN: Your GitHub personal access token.
-- OPENAI_API_KEY: Your OpenAI API key.
 
 ## Examples
 Run the code review on a specific pull request:
