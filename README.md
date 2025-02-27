@@ -1,7 +1,11 @@
 # Code Review Bot
 
 ## Introduction
-Code review bot is to automate code reviews by using OpenAI's language model. It fetches code changes from GitHub pull requests on main branch, analyzes the changes using OpenAI's GPT model, and posts feedback directly to the corresponding GitHub pull request.
+Code review bot is to automate code reviews by using OpenAI's language model. 
+
+It fetches code changes from GitHub pull requests on main branch, analyzes the changes using OpenAI's GPT model.
+
+Posts feedback directly to the corresponding GitHub pull request.
 
 ## Table of Contents
 - [Installation](#installation)
