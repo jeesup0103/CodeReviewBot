@@ -29,7 +29,7 @@ Posts feedback directly to the corresponding GitHub pull request.
     pip install openai requests python-dotenv
     ```
 
-3. Make GitHub repository secrets named GH_TOKEN and OPENAI_API_KEY
+3. Make GitHub repository secrets named OPENAI_API_KEY, REP_GH_TOKEN and BOT_GH_TOKEN
     ```env
     OPENAI_API_KEY=your_openai_api_key
     REP_GH_TOKEN=your_repository_github_token
